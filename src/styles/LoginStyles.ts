@@ -1,0 +1,87 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+    background: {
+      flex: 1,
+      width: '100%',
+      height: '100%',
+    },
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    formContainer: {
+      backgroundColor: 'rgba(255, 255, 255, 0.8)',
+      padding: 50,
+      borderRadius: 40,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 50,
+      },
+      shadowOpacity: 0.3,
+      shadowRadius: 10,
+      elevation: 10,
+      alignItems: 'center',
+      width: '80%',
+      borderWidth: 2,
+      borderColor: '#87cefa',
+      transform: [{ perspective: 1000 }, { rotateX: '5deg' }, { rotateY: '5deg' }],
+    },
+    iconContainer: {
+      backgroundColor: 'rgba(255, 255, 255, 0.8)',
+      padding: 20,
+      borderRadius: 500,
+      marginBottom: 50,
+      alignItems: 'center',
+      justifyContent: 'center',
+      shadowColor: 'rgba(255, 255, 255, 0.8)',
+      shadowOffset: {
+        width: 0,
+        height: 5,
+      },
+      shadowOpacity: 0.3,
+      shadowRadius: 50,
+      elevation: 10,
+    },
+    icon: {
+      fontSize: 50,
+      color: '#fff',
+    },
+    input: {
+      width: '100%',
+      padding: 10,
+      marginVertical: 10,
+      backgroundColor: '#dcdde1',
+      borderRadius: 50,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 3,
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 5,
+      elevation: 5,
+    },
+    button: {
+      backgroundColor: '#008000',
+      padding: 15,
+      borderRadius: 40,
+      marginTop: 20,
+      width: '65%',
+      alignItems: 'center',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 5,
+      },
+      shadowOpacity: 0.9,
+      shadowRadius: 30,
+      elevation: 10,
+    },
+    buttonText: {
+      color: '#fff',
+      fontSize: 15,
+    },
+  });
