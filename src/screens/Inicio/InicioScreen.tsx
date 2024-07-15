@@ -7,7 +7,7 @@ const InicioScreen = () => {
   const navigation = useNavigation();
 
   const handleLoginPress = () => {
-    navigation.navigate ('Roles');
+    navigation.navigate ('Login');
   };
 
   return (
