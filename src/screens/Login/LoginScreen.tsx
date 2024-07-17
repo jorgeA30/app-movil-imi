@@ -1,46 +1,57 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ImageBackground, Image, useWindowDimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from 'src/styles/LoginStyles';
 
 const LoginScreen = () => {
-  const [collaboratorNumber, setCollaboratorNumber] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
   const navigation = useNavigation();
+  const { width, height } = useWindowDimensions();
+
   const handleLoginPress = () => {
-    navigation.navigate ('Asistencia y Nomina');
+    navigation.navigate('Asistencia y Nomina');
+  };
+
+  const handleRegisterPress = () => {
+    navigation.navigate('RegistroUsuario'); // Actualiza esto con el nombre de tu pantalla de registro
   };
 
   return (
     <ImageBackground
       source={require('assets/page1.jpg')} 
-      style={styles.background}>
-        
+      style={[styles.background, { width, height }]}
+    >
       <View style={styles.container}>
         <View style={styles.formContainer}>
           <View style={styles.iconContainer}>
-            <Text style={styles.icon}>👤</Text>
-        </View>
+            <Image source={require('assets/logo1.png')} style={styles.icon} />
+          </View>
+          
           <TextInput
-            style={styles.input} placeholder="Número de Colaborador" value={collaboratorNumber} 
-            onChangeText={setCollaboratorNumber}/>
+            style={styles.input} 
+            placeholder="Nombre de Usuario" 
+            value={name}
+            onChangeText={setName}
+          />         
           <TextInput
-            style={styles.input} placeholder="Nombre" value={name}
-            onChangeText={setName}/>         
-          <TextInput
-            style={styles.input} placeholder="Contraseña" secureTextEntry value={password}
-            onChangeText={setPassword}/>
+            style={styles.input} 
+            placeholder="Contraseña" 
+            secureTextEntry 
+            value={password}
+            onChangeText={setPassword}
+          />
           <TouchableOpacity style={styles.button} onPress={handleLoginPress}>
             <Text style={styles.buttonText}>Iniciar sesión</Text>
           </TouchableOpacity>
         </View>
+        <TouchableOpacity style={styles.registerLink} onPress={handleRegisterPress}>
+          <Text style={styles.registerText}>Registro de Usuario</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
 };
-
-
 
 export default LoginScreen;

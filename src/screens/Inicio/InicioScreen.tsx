@@ -1,20 +1,21 @@
 import React from 'react';
-import { View, Text, ImageBackground, TouchableOpacity, } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from 'src/styles/InicioStyles';
 
 const InicioScreen = () => {
   const navigation = useNavigation();
+  const { width, height } = useWindowDimensions();
 
   const handleLoginPress = () => {
-    navigation.navigate ('Login');
+    navigation.navigate('Login');
   };
 
   return (
     <ImageBackground
       source={require('assets/page1.jpg')}
-      style={styles.background}>
-    
+      style={[styles.background, { width, height }]}
+    >
       <View style={styles.overlay}>
         <View style={styles.container}>
           <Text style={styles.title}>Grupo IMI</Text>
@@ -30,4 +31,5 @@ const InicioScreen = () => {
     </ImageBackground>
   );
 };
+
 export default InicioScreen;
