@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, TextInput, ImageBackground, useWindowDimensions, Image } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, TextInput, ImageBackground, useWindowDimensions, Image, Alert } from 'react-native';
 import { styles } from 'src/styles/AsistenciaStyles';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 
 const AsistenciaScreen = () => {
   const [descuento, setDescuento] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const { width, height } = useWindowDimensions();
 
@@ -13,8 +15,23 @@ const AsistenciaScreen = () => {
     setDescuento(value);
   };
 
-  const handleUploadJustificante = () => {
-    alert('Subir justificante');
+  const handleUploadJustificante = async () => {
+    let result = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (result.granted === false) {
+      alert('Permiso de acceso a la galería es requerido!');
+      return;
+    }
+
+    let pickerResult = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!pickerResult.cancelled) {
+      setSelectedImage(pickerResult.uri);
+      alert('Justificante subido exitosamente.');
+    }
     setMenuOpen(false);
   };
 
@@ -99,6 +116,13 @@ const AsistenciaScreen = () => {
               />
             </View>
           </View>
+
+          {selectedImage && (
+            <View style={styles.imagePreviewContainer}>
+              <Text style={styles.imagePreviewLabel}>Justificante Subido:</Text>
+              <Image source={{ uri: selectedImage }} style={styles.imagePreview} />
+            </View>
+          )}
         </View>
       </ScrollView>
     </ImageBackground>
