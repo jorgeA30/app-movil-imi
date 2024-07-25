@@ -18,16 +18,16 @@ export const styles = StyleSheet.create({
       padding: 20,
     },
     logo: {
-      marginTop: 120,
-      width: 250,
-      height: 250,
+      marginTop: 100,
+      width: 220,
+      height: 220,
       alignSelf: 'center',
       borderRadius: 200
     
     },
     title: {
-      fontSize: 26,
-      marginTop: -230,
+      fontSize: 24,
+      marginTop: -110,
       fontWeight: 'bold',
       marginBottom: 10,
       color: '#fff',
@@ -45,8 +45,8 @@ export const styles = StyleSheet.create({
     },
     button: {
       backgroundColor: '#1e90ff',
-      paddingVertical: 10,
-      paddingHorizontal: 20,
+      paddingVertical: 15,
+      paddingHorizontal: 30,
       borderRadius: 10,
     },
     buttonText: {
