@@ -15,7 +15,7 @@ const AppNavigator = () => {
         initialRouteName="Inicio" screenOptions={{ headerStyle: { backgroundColor: '#4682b4',}, headerTintColor: '#ffffff', 
         headerTitleStyle: {fontWeight: 'bold',},
         }}>
-        <Stack.Screen name="Bienvenido"component={InicioScreen}options={{title: 'Bienvenido'}}/>
+        <Stack.Screen name="Bienvenido"component={InicioScreen}options={{title: 'Grupo Educativo IMI'}}/>
         <Stack.Screen name="Login" component={LoginScreen} options={{title: 'Iniciar sesión'}}/>
         <Stack.Screen name="RegistroUsuario" component={UsuarioScreen} options={{title: 'Registro Usuario'}}/>
         <Stack.Screen name="Asistencia y Nomina" component={AsistenciaScreen} options={{title: 'Asistencia y Nómina'}}/>

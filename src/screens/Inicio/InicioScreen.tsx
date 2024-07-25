@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from 'src/styles/InicioStyles';
+import { Image} from "react-native";
 
 const InicioScreen = () => {
   const navigation = useNavigation();
@@ -17,9 +18,12 @@ const InicioScreen = () => {
       style={[styles.background, { width, height }]}
     >
       <View style={styles.overlay}>
+      <Image source={require('assets/logo2.png')} 
+        style={styles.logo}
+        />
         <View style={styles.container}>
-          <Text style={styles.title}>Grupo IMI</Text>
-          <Text style={styles.subtitle}>Instituto Mexicano de Informática</Text>
+          <Text style={styles.title}>Instituto Mexicano de Informática</Text>
+          <Text style={styles.subtitle}>Bienvenido</Text>
           <TouchableOpacity style={styles.button} onPress={handleLoginPress}>
             <Text style={styles.buttonText}>Empezar</Text>
           </TouchableOpacity>
