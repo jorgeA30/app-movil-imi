@@ -18,16 +18,16 @@ export const styles = StyleSheet.create({
       padding: 20,
     },
     logo: {
-      marginTop: 110,
-      width: 270,
-      height: 270,
+      marginTop: 120,
+      width: 250,
+      height: 250,
       alignSelf: 'center',
       borderRadius: 200
     
     },
     title: {
       fontSize: 26,
-      marginTop: -220,
+      marginTop: -230,
       fontWeight: 'bold',
       marginBottom: 10,
       color: '#fff',
