@@ -26,7 +26,7 @@ const LoginScreen = () => {
       <View style={styles.container}>
         <View style={styles.formContainer}>
           <View style={styles.iconContainer}>
-            <Image source={require('assets/logo1.png')} style={styles.icon} />
+            <Image source={require('assets/logo2.png')} style={styles.icon} />
           </View>
           
           <TextInput
@@ -46,9 +46,7 @@ const LoginScreen = () => {
             <Text style={styles.buttonText}>Iniciar sesión</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.registerLink} onPress={handleRegisterPress}>
-          <Text style={styles.registerText}>Registro de Usuario</Text>
-        </TouchableOpacity>
+        
       </View>
     </ImageBackground>
   );
